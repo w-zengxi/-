@@ -1,0 +1,52 @@
+<!--pages/route.wxml-->
+<view class="container">
+  <!-- <view class="flex route-box">
+    <view class="route-input">
+      <view class="flex input origin-input">
+        <image class="icon" src="/images/origin.png"></image>
+        <input value="我的位置"></input>
+      </view>
+      <view class="flex input destination-input">
+        <image class="icon" src="/images/destination.png"></image>
+        <input value="目的地"></input>
+      </view>
+    </view>
+    <image class="swap-btn" src='/images/exchange.png'></image>
+  </view> -->
+  <view class="flex travel-mode">
+    <view class="travel-item" bindtap="selectStrategy" data-strategy="0">
+      <image wx:if="{{travel == 0}}" src="/images/car_fill.png"></image>
+      <image wx:else src="/images/car.png"></image>
+    </view>
+    <view class="travel-item" bindtap="selectStrategy" data-strategy="1">
+      <image wx:if="{{travel == 1}}" src="/images/bus_fill.png"></image>
+      <image wx:else src="/images/bus.png"></image>
+    </view>
+    <view class="travel-item" bindtap="selectStrategy" data-strategy="2">
+      <image wx:if="{{travel == 2}}" src="/images/ride_fill.png"></image>
+      <image wx:else src="/images/ride.png"></image>
+    </view>
+    <view class="travel-item" bindtap="selectStrategy" data-strategy="3">
+      <image wx:if="{{travel == 3}}" src="/images/walk_fill.png"></image>
+      <image wx:else src="/images/walk.png"></image>
+    </view>
+  </view>
+
+  <map id="map" class="map" latitude="{{map.latitude}}" longitude="{{map.longitude}}" markers="{{map.markers}}" polyline="{{map.polyline}}" scale="14" show-location="true">
+    <cover-view class="map-control">
+      <cover-image bindtap="moveToLocation" class="control-target" src="/images/target.png"></cover-image>
+    </cover-view>
+  </map>
+
+  <view class="paths">
+    <view class="path-info">
+      <view>
+        {{place.title}}
+        <text class="distance font12">{{distance}}</text>
+      </view>
+      <view class="font12">{{place.address}}</view>
+    </view>
+    <image bindtap="mapNavigation" class="path-nav" src="/images/nav.png" ></image>
+  </view>
+  <button class="navigation-btn" bindtap="openInfo">详情</button>
+</view>

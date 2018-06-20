@@ -1,0 +1,27 @@
+ <!--search.wxml-->
+<view class="container">
+   <!-- <view class="search">  -->
+    <view class="input-box">
+      <view class="keyword-box">
+        <input focus="true" type="text" bindinput="bindKeyInput" placeholder="请输入关键字" class="keyword-input"/>
+        <!-- <view class="keyword-button" bindtap="placeSearch" >
+          搜索
+        </view> -->
+      </view>
+    </view>
+     <scroll-view scroll-y class="suggest"> 
+      <view class="flex sug-box" wx:for="{{sugData}}" wx:key="{{item.id}}" data-address="{{item}}">
+        <view class="flex sug-text" bindtap="viewPlace" data-index="{{index}}">
+          <image class="sug-icon" src="/images/location.png"></image>
+          <view class="text">
+            <text class="sug-title">{{item.title}}</text>
+            <text class="sug-address">{{item.address}}</text>
+          </view>
+        </view>
+        <view class="route-btn" bindtap="routePlanning" data-index="{{index}}">
+          <image class="sug-icon route-button" src="/images/route.png"></image>
+        </view>
+      </view>
+     </scroll-view> 
+   <!-- </view>    -->
+  </view>

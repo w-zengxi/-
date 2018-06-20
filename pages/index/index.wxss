@@ -1,0 +1,48 @@
+.fixed{
+  position: fixed; 
+} 
+.search-button{
+  top: 0;right: 0;left: 0;
+  margin: 40rpx;
+  padding:0 20rpx;
+  height: 72rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  color: #707070;
+  line-height: 70rpx; 
+  font-size: 28rpx;
+}
+.search-button cover-image{
+  float: right;
+  margin: 16rpx 20rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.map{  
+  flex-grow: 1;
+  width: 100%; 
+}
+.fiexd-foot{
+  right: 0;
+  bottom: 0;
+  margin: 0 40rpx 50% 0;
+}
+
+.fixed-search{
+  top: 0; right: 0;
+  margin: 40rpx;
+}
+.frame{
+  /* border-radius: 10rpx; */
+  border: 1px solid #f0f0f0;
+  border-radius: 36rpx;
+}
+.map-control{
+  width: 72rpx;
+  height: 72rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+  background: #fff;
+}

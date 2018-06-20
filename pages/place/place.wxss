@@ -1,0 +1,19 @@
+.map{
+  flex-grow: 1;
+   width: 100%; 
+}
+.address{
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 52rpx;
+}
+.address-title{
+  font-size: 32rpx;
+}
+.address-text{
+  color: #888;
+  font-size: 28rpx;
+}
+.distance{
+  margin-right: 20rpx;
+}

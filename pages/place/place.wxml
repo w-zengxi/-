@@ -1,0 +1,16 @@
+<!--place.wxml-->
+<view class="container">
+  <map class="map" id="map" longitude="{{map.longitude}}" latitude="{{map.latitude}}" scale="{{map.scale}}" show-location="true" markers="{{map.markers}}" polyline="{{map.polyline}}" bindmarkertap="makertap" controls="{{controls}}"> 
+  </map>
+  <view class="address">
+    <view style="padding: 20rpx;">
+      <view class="address-title">{{address.title}}</view>
+      <view class="address-text">
+        <text class="distance">{{distance}}公里</text>
+        <text>{{address.address}}</text>
+      </view>
+    </view>
+    <!-- <image src="/images/route.png"></image> -->
+    <button bindtap="routePlanning">详细信息</button> 
+  </view>
+</view>

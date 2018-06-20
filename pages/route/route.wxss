@@ -1,0 +1,114 @@
+/* pages/route.wxss */
+.map{
+  flex-grow: 1;
+  width: 100%;
+}
+.flex{
+  display: -webkit-flex;
+}
+.route-box{
+  padding: 0 40rpx;
+  background: #3278b5;
+  font-size: 32rpx;
+  color: #fff;
+}
+.route-input{
+  flex-grow: 1;
+}
+.input{
+  align-items: center;
+  padding: 20rpx 0;
+}
+.input input{
+  width: 100%;
+  line-height: 72rpx;
+}
+.origin-input{
+  border-bottom: 1px solid #ccc;
+}
+.input image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.route-search{
+  align-self: center;
+  margin-left: 40rpx;
+}
+.swap-btn{
+  align-self: center;
+  margin-left: 40rpx;
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.travel-mode{
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  font-size: 28rpx;
+}
+.travel-item{
+  flex-grow: 1;
+  width: 25%;
+  padding: 20rpx 0;
+  text-align: center;
+}
+.travel-item image{
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.map-control{
+  position: absolute;
+  right: 0;bottom: 0;
+  margin: 40rpx;
+}
+.map-control .control-target{
+  width: 72rpx;
+  height: 72rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.paths{
+  display: -webkit-flex;
+  padding: 20rpx 40rpx;
+  background: #fff;
+  line-height: 44rpx;
+  font-size: 32rpx;
+}
+.path-info{
+  flex-grow: 1;
+}
+
+.path-nav{
+  flex-shrink: 0;
+  align-self: center;
+  width: 54rpx;
+  height: 54rpx;
+  padding: 20rpx;
+  margin-left: 40rpx;
+  background: #3278b5;
+  border-radius: 50%;
+}
+.font16{
+  font-size: 32rpx;
+} 
+.font12{
+  color: #777;
+  font-size: 24rpx;
+}
+.distance{
+  display: inline-block;
+  padding: 10rpx;
+  margin-right: 40rpx;
+  border-radius: 8rpx;
+  background: #f0f0f0;
+}
+
+.navigation-btn{
+  margin: 0;
+  font-size: 32rpx;
+}
