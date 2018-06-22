@@ -7,36 +7,8 @@ Page({
   data: {
     sugData: [],
     city: '',
-    address: ''
-  },
-  // 绑定input输入（输入预测）
-  bindKeyInput: function(e) {
-    var that = this;
-    var sugData = [];
-    var value = e.detail.value;
-    that.setData({
-      address: value
-    })
-    qqMap.getSuggestion({
-      keyword: e.detail.value,
-      region: that.data.city,
-      policy: 1,
-      success: function (res) {
-        sugData = res.data;
-        that.setData({
-          sugData: sugData
-        })
-      },
-      fail: function (res) {
-        sugData = [];
-        that.setData({
-          sugData: sugData
-        })
-        console.log(res);
-      },
-      complete: function (res) {
-      }
-    })
+    address: '',
+    history: []
   },
   // 生命周期函数--监听页面加载
   onLoad: function (options) {
@@ -53,6 +25,12 @@ Page({
         comsole.log(res)
       }
     })
+    var history = wx.getStorageSync('history');
+    if (history) {
+      that.setData({
+        history: JSON.parse(history)
+      })
+    }
   },
 
   //  生命周期函数--监听页面初次渲染完成
@@ -113,10 +91,51 @@ Page({
   //     }
   //   })
   // },
+  // 绑定input输入（输入预测）
+  bindKeyInput: function (e) {
+    var that = this;
+    var sugData = [];
+    var value = e.detail.value;
+    that.setData({
+      address: value
+    })
+    qqMap.getSuggestion({
+      keyword: e.detail.value,
+      region: that.data.city,
+      policy: 1,
+      success: function (res) {
+        sugData = res.data;
+        that.setData({
+          sugData: sugData
+        })
+      },
+      fail: function (res) {
+        sugData = [];
+        that.setData({
+          sugData: sugData
+        })
+        console.log(res);
+      },
+      complete: function (res) {
+      }
+    })
+  },
   viewPlace: function (e){
     var that = this;
     var index = e.currentTarget.dataset.index;
-    console.log(that.data.sugData[index])
+    that.data.history.unshift(that.data.sugData[index]);
+    // 去重
+    for (var i = 0; i < that.data.history.length; i++) {
+      for (var j = i + 1; j < that.data.history.length; j++) {
+        if (that.data.history[i].id == that.data.history[j].id) {
+          that.data.history.splice(j, 1)
+        }
+      }
+    }
+    if (that.data.history.length > 5){
+      that.data.history.splice(5)
+    }
+    wx.setStorageSync('history', JSON.stringify(that.data.history))
     wx.navigateTo({
       url: '../place/place?place=' + JSON.stringify(that.data.sugData[index])
     })
@@ -126,6 +145,13 @@ Page({
     var index = e.currentTarget.dataset.index;
     wx.navigateTo({
       url: '../route/route?place=' + JSON.stringify(that.data.sugData[index])
+    })
+  },
+  clearHistory: function(){
+    var that = this;
+    wx.removeStorageSync('history')
+    that.setData({
+      history: []
     })
   }
 })
