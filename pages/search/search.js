@@ -121,35 +121,41 @@ Page({
     })
   },
   viewPlace: function (e){
+    console.log(1)
     var that = this;
     var index = e.currentTarget.dataset.index;
-    that.data.history.unshift(that.data.sugData[index]);
+    var history = that.data.history;
+    var place = '';
+    history.unshift(that.data.sugData[index]);
+    place = that.data.sugData[index];
     // 去重
-    for (var i = 0; i < that.data.history.length; i++) {
-      for (var j = i + 1; j < that.data.history.length; j++) {
-        if (that.data.history[i].id == that.data.history[j].id) {
-          that.data.history.splice(j, 1)
+    for (var i = 0; i < history.length; i++) {
+      for (var j = i + 1; j < history.length; j++) {
+        if (history[i].id == history[j].id) {
+          history.splice(j, 1)
         }
       }
     }
-    if (that.data.history.length > 5){
-      that.data.history.splice(5)
+    if (history.length > 5){
+      history.splice(5)
     }
-    wx.setStorageSync('history', JSON.stringify(that.data.history))
+    that.setData({
+      history: history
+    })
+    wx.setStorageSync('history', JSON.stringify(history))
     wx.navigateTo({
-      url: '../place/place?place=' + JSON.stringify(that.data.sugData[index])
+      url: '../place/place?place=' + JSON.stringify(place)
     })
   },
-  routePlanning: function(e){
+  // routePlanning: function(e){
+  //   var that = this;
+  //   var index = e.currentTarget.dataset.index;
+  //   wx.navigateTo({
+  //     url: '../route/route?place=' + JSON.stringify(that.data.history[index])
+  //   })
+  // },
+  clearHistory: function(e){
     var that = this;
-    var index = e.currentTarget.dataset.index;
-    wx.navigateTo({
-      url: '../route/route?place=' + JSON.stringify(that.data.sugData[index])
-    })
-  },
-  clearHistory: function(){
-    var that = this;
-    wx.removeStorageSync('history')
     that.setData({
       history: []
     })

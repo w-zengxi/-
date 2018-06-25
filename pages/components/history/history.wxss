@@ -1,0 +1,70 @@
+/* pages/components/history/history.wxss */
+.suggest{
+  overflow: hidden;
+  flex-grow: 1;
+  height: 100%;
+  font-size: 32rpx;
+  box-sizing: border-box;
+}
+.flex{
+  overflow: hidden;
+  display: -webkit-flex;
+}
+.sug-box{
+  margin: 0 10rpx;
+}  
+.route-btn{
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:0 10rpx 0 20rpx;
+  border-bottom: 1px solid #ccc;
+  color: #3877ff;
+  font-size: 20rpx;
+}
+.route-btn image{
+  margin-bottom: 8rpx;
+  width: 34rpx;
+  height: 34rpx;
+}
+.sug-icon{
+  align-self:center;
+  flex-shrink:0;
+  padding: 0 20rpx;
+  width:40rpx;
+  height:40rpx;
+}
+.route-buttom{
+  border-bottom: 1px solid #ccc;
+}
+.sug-text{
+  flex-grow:1;
+} 
+.text{
+  flex-grow:1;
+  width: 100rpx;
+  padding:20rpx 0;
+  border-bottom: 1px solid #ccc;
+}
+.sug-text text{
+  display: block;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  line-height: 54rpx;
+  text-align: left;
+}
+.sug-title{
+  font-size: 32rpx;
+  color: #222;
+}
+.sug-address{
+  font-size: 28rpx;
+  color: #999;
+}
+.clear-history{
+  width: 100%;
+  margin-top: -1px;
+  font-size: 28rpx;
+}

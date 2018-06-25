@@ -16,23 +16,5 @@
       </view>
     </view>
   </scroll-view>
-  <view class="suggest history" wx:elif="{{history.length != 0}}"> 
-    <view class="flex sug-box" wx:for="{{history}}" wx:key="{{item.id}}" data-address="{{item}}">
-      <view class="flex sug-text" bindtap="viewPlace" data-index="{{index}}">
-        <image class="sug-icon" src="/images/history.png"></image>
-        <view class="text">
-          <text class="sug-title">{{item.title}}</text>
-          <text class="sug-address">{{item.address}}</text>
-        </view>
-      </view>
-      <view class="route-btn" bindtap="routePlanning" data-index="{{index}}">
-        <image src="/images/route_fill.png"></image>
-        <text>到这去</text>
-      </view> 
-    </view>
-    <button class="history" bindtap="clearHistory">清除历史记录！</button>
-  </view> 
-  <view wx:else style="margin:200rpx 0;color:#888;text-align:center;font-size:32rpx;">
-    没有历史记录
-  </view>
+  <component-history history="{{history}}" bind:clearHistory="clearHistory" wx:else></component-history>
 </view>
