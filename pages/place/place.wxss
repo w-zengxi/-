@@ -2,8 +2,26 @@
   flex-grow: 1;
    width: 100%; 
 }
+.control{
+  position: fixed;
+}
+.control-target{
+  right: 20rpx;
+  bottom: 480rpx;
+  width: 92rpx;
+  height: 92rpx;
+}
+.control-route{
+  right: 10rpx;
+  bottom: 260rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+
 .address{
   width: 100%;
+  background: #fff;
   box-sizing: border-box;
   line-height: 52rpx;
 }
@@ -11,9 +29,15 @@
   font-size: 32rpx;
 }
 .address-text{
-  color: #888;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  color: #777;
   font-size: 28rpx;
 }
 .distance{
+  padding: 6rpx 10rpx;
   margin-right: 20rpx;
+  border-radius: 8rpx;
+  background: #eee;
 }

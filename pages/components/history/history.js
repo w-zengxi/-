@@ -43,7 +43,8 @@ Component({
         history: history
       })
       wx.setStorageSync('history', JSON.stringify(history))
-      wx.navigateTo({
+      console.log(place)
+      wx.redirectTo({
         url: '../place/place?place=' + JSON.stringify(place)
       })
     },

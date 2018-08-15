@@ -224,8 +224,10 @@ Page({
     })
   },
   // 打开详情
-  openInfo: function () {
-
+  openSite: function () {
+    wx.navigateTo({
+      url: '../site/site'
+    })
   },
   // 导航
   mapNavigation: function(){
@@ -238,7 +240,6 @@ Page({
       scale: 28
     })
   },
-
   moveToLocation: function () {
     var that = this;
     that.mapCtx.moveToLocation()

@@ -1,34 +1,37 @@
 /* search.wxss */
-.input-box{
-  flex-shrink: 0;
-  flex-grow: 0;
-  padding: 24rpx;
-  width: 100%;
-  box-sizing: border-box;
-  background: #3877ff;
-  font-size: 28rpx;
+.header{
+ border-bottom: 20rpx solid #eee;
 }
-.keyword-box{
+.search-box{
   display: -webkit-flex;
   align-items: center;
-}
-.keyword-input{
-  flex-grow: 1;
-  padding: 0 12px;
+  margin: 20rpx;
+  background: #eee;
   border-radius: 10rpx;
-  height: 68rpx;
-  background: #f0f0f0;
+  line-height: 80rpx;
+  font-size: 32rpx;
 }
-.keyword-button{
-  flex-grow: 0;
-  margin-left: 20rpx;
-  color: #fff;
-  text-align: center;
-}
-.suggest{
-  overflow: hidden;
+.search-input{
   flex-grow: 1;
-  height: 100%;
+  padding: 0 20rpx;
+  height: 80rpx;
+}
+.search-cancel{
+  flex-grow: 0;
+  padding: 0 20rpx;
+  color: #3877ff;
+}
+
+.search-nearby{
+  display: flex;
+  justify-content: space-around;
+  margin: 20rpx;
+  color: #777;
+  font-size: 28rpx;
+}
+
+.suggest{
+  flex-grow: 1;
   padding: 0 10rpx;
   font-size: 32rpx;
   box-sizing: border-box;

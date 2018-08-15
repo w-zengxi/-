@@ -66,5 +66,10 @@
 .clear-history{
   width: 100%;
   margin-top: -1px;
-  font-size: 28rpx;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  line-height: 80rpx;
+  color: #888;
+  font-size: 32rpx;
 }

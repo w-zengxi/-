@@ -1,0 +1,25 @@
+<!--pages/site/site.wxml-->
+<!--  markers="{{map.markers}}" polyline="{{map.polyline}}"  -->
+<view class="container">
+  <map id="map" class="map" latitude="{{map.latitude}}" longitude="{{map.longitude}}" scale="16" markers="{{map.markers}}" bindmarkertap="markertap" show-location bindregionchange="regionchange" >
+    <cover-view class="map-control">
+      <cover-image bindtap="moveToLocation" class="control-target" src="/images/target.png"></cover-image>
+    </cover-view>
+    <cover-image class="control-sign" src="/images/sign.png"></cover-image>
+  </map>
+  <scroll-view scroll-y class="poi" wx:if="{{sugData.length != 0}}"> 
+    <view class="poi-list formatted_addresses" bindtap="checkPoi" data-index="-1">
+      <view class="poi-info">
+        <text class="poi-title">{{formatted_addresses}}</text>
+      </view>
+      <button bindtap="aaaa">确定</button>
+    </view>
+    <view class="poi-list" wx:for="{{}}" wx:key="{{item.id}}" bindtap="checkPoi" data-index="{{index}}" data-address="{{item}}">
+      <view class="poi-info" >
+          <text class="poi-title">{{item.title}}</text>
+          <text class="poi-address">{{item.address}}</text>
+      </view>
+      <image src="/images/check.png" wx:if="{{check == index}}"></image>
+    </view>
+  </scroll-view>
+</view>

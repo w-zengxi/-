@@ -11,16 +11,12 @@ Page({
       markers: [],
       latitude: '',
       longitude: '',
-      scale: 15
+      scale: 15,
+      markers: []
     },
     address: ''
   },
   //事件处理函数
-  searchSite: function () {
-    wx.navigateTo({
-      url: '../search/search'
-    })
-  },
   onLoad: function () {
     var that = this;
     that.getLocation();
@@ -28,6 +24,7 @@ Page({
   onReady: function (e) {
     this.mapCtx = wx.createMapContext('map')
   },
+  // 获取当前位置
   getLocation: function () {
     var that = this;
     wx.getLocation({
@@ -37,24 +34,10 @@ Page({
           'map.longitude': res.longitude,
           'map.latitude': res.latitude
         })
-        qqMap.reverseGeocoder({
-          location: {
-            longitude: res.longitude,
-            latitude: res.latitude
-          },
-          success: function (res) {
-            var city = res.result.address_component.city;
-            wx.setStorage(
-              {
-                key: 'city',
-                data: city
-              }
-            )
-          }
-        })
       }
     })
   }, 
+  // 改变地图的缩放级别
   changeScale: function (e) {
     var that = this;
     switch (e.target.id){
@@ -70,6 +53,18 @@ Page({
         break;
     }
   },
+  // 打开搜索页面
+  openSearch: function () {
+    wx.navigateTo({
+      url: '../search/search'
+    })
+  },
+  // 打开路线页面
+  openRoute: function () {
+    wx.navigateTo({
+      url: '../route/route'
+    })
+  },
   moveToLocation: function () {
     var that = this;
     that.mapCtx.moveToLocation()
@@ -77,29 +72,4 @@ Page({
       'map.scale': 15
     })
   }
-  // setMarker: function (data) {
-  //   var that = this;
-  //   var markers = [];
-  //   for (var i = 0; i < data.length; i++) {
-  //     var random = Math.floor(Math.random() * 10 + 1)
-  //     markers.push(
-  //       {
-  //         id: data[i].id,
-  //         latitude: data[i].location.lat,
-  //         longitude: data[i].location.lng,
-  //         title: data[i].title,
-  //         width: 20,
-  //         height: 20,
-  //         second: random,
-  //         iconPath: '/images/' + (random >= 7 ? 7 : random) + '.png',
-  //         label: {
-  //           // content: data[i].address
-  //         }
-  //       }
-  //     )
-  //   }
-  //   that.setData({
-  //     'map.markers': markers
-  //   });
-  // }
 })

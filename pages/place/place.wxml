@@ -2,15 +2,16 @@
 <view class="container">
   <map class="map" id="map" longitude="{{map.longitude}}" latitude="{{map.latitude}}" scale="{{map.scale}}" show-location="true" markers="{{map.markers}}" polyline="{{map.polyline}}" bindmarkertap="makertap" controls="{{controls}}"> 
   </map>
+  <cover-image class="control control-target" bindtap="moveToLocation"  src="/images/target.png"></cover-image>
+  <cover-image class="control control-route" bindtap="openRoute" src="/images/routes.png"></cover-image>
   <view class="address">
     <view style="padding: 20rpx;">
       <view class="address-title">{{address.title}}</view>
       <view class="address-text">
-        <text class="distance">{{distance}}公里</text>
+        <text class="distance">{{distance}}</text>
         <text>{{address.address}}</text>
       </view>
     </view>
     <!-- <image src="/images/route.png"></image> -->
-    <button bindtap="routePlanning">详细信息</button> 
   </view>
 </view>

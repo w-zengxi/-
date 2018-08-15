@@ -3,17 +3,9 @@
     <map class="map" id="map" longitude="{{map.longitude}}" latitude="{{map.latitude}}" scale="{{map.scale}}" show-location="true" markers="{{map.markers}}" bindmarkertap="makertap"  controls="{{controls}}"> 
     </map>
   
-   <cover-view class="fixed search-button button" bindtap="searchSite">
-    搜索地点
-    <cover-image src="/images/search.png"></cover-image>
+  <cover-view class="control control-search" bindtap="openSearch">
+    搜索地点<cover-image src="/images/search.png"></cover-image>
   </cover-view>
-  <cover-view class="fixed fiexd-foot">
-      <cover-view class="frame" bindtap="changeScale"> 
-        <cover-image class="map-control" id="enlarge" src="/images/add.png"></cover-image>
-        <cover-image class="map-control" id="narrow" src="/images/remove.png"></cover-image>
-     </cover-view>  
-    <cover-view bindtap="moveToLocation" class="frame" style="margin-top:80rpx;">
-      <cover-image class="map-control" src="/images/target.png"></cover-image>
-    </cover-view>
-  </cover-view> 
+  <cover-image class="control control-target" bindtap="moveToLocation"  src="/images/target.png"></cover-image>
+  <cover-image class="control control-route" bindtap="openRoute" src="/images/routes.png"></cover-image>
 </view>

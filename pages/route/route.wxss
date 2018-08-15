@@ -38,7 +38,7 @@
 .swap-btn{
   align-self: center;
   margin-left: 40rpx;
-  width: 54rpx;
+  width: 64rpx;
   height: 54rpx;
 }
 

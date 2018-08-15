@@ -1,0 +1,68 @@
+/* pages/site/site.wxss */
+.map{
+  flex-grow: 1; 
+  width: 100%;
+}
+.map-control{
+  position: absolute;
+  right: 0;bottom: 0;
+  margin: 40rpx;
+}
+.map-control .control-target{
+  width: 72rpx;
+  height: 72rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: #fff;
+}
+.control-sign{
+  position: absolute;
+  top: 0;right: 0;bottom: 0;left: 0;
+  margin: auto;
+  width: 72rpx;
+  height: 72rpx;
+  transform: translateY(-50%);
+}
+
+
+.poi{
+  /* height: 60%; */
+}
+
+.poi-list{
+  display: -webkit-flex;
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.poi-info{
+   flex-grow: 1;
+}
+.poi-title{
+  display: block;
+  font-size: 32rpx;
+}
+.poi-address{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #888;
+  font-size: 28rpx;
+}
+.poi-list image{
+  align-self: center;
+  flex-shrink: 0;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.formatted_addresses{
+  padding: 40rpx 20rpx;
+  line-height: 54rpx;
+}
+.formatted_addresses button{
+  flex-shrink: 0;
+  height: 54rpx;
+  line-height: 54rpx;
+  font-size: 28rpx;
+}

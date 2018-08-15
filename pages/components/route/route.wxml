@@ -1,18 +1,5 @@
-<!--pages/route.wxml-->
-<view class="container">
-   <view class="flex route-box">
-    <view class="route-input">
-      <view class="flex input origin-input" bindtap="openSite">
-        <image class="icon" src="/images/origin.png"></image>
-        <text>我的位置</text>
-      </view>
-      <view class="flex input destination-input" bindtap="openSite">
-        <image class="icon" src="/images/destination.png"></image>
-        <text>目的地</text>
-      </view>
-    </view>
-    <view class="swap-btn">搜索</view>
-  </view> 
+<!--pages/components/route/route.wxml-->
+<view class="route">
   <view class="flex travel-mode">
     <view class="travel-item" bindtap="selectStrategy" data-strategy="0">
       <image wx:if="{{travel == 0}}" src="/images/car_fill.png"></image>
@@ -49,3 +36,4 @@
     <image bindtap="mapNavigation" class="path-nav" src="/images/nav.png" ></image>
   </view>
 </view>
+

@@ -5,6 +5,7 @@ const qqMap = new qqmap({ key: config.qqKey})
 Page({
   // 页面的初始数据
   data: {
+    input_value: '',
     sugData: [],
     city: '',
     address: '',
@@ -102,9 +103,10 @@ Page({
     qqMap.getSuggestion({
       keyword: e.detail.value,
       region: that.data.city,
-      policy: 1,
+      policy: 0,
       success: function (res) {
         sugData = res.data;
+        console.log(res.data)
         that.setData({
           sugData: sugData
         })
@@ -120,8 +122,8 @@ Page({
       }
     })
   },
+  // 打开地点并添加到历史记录
   viewPlace: function (e){
-    console.log(1)
     var that = this;
     var index = e.currentTarget.dataset.index;
     var history = that.data.history;
@@ -143,21 +145,17 @@ Page({
       history: history
     })
     wx.setStorageSync('history', JSON.stringify(history))
-    wx.navigateTo({
+    // 打开地点
+    wx.redirectTo({
       url: '../place/place?place=' + JSON.stringify(place)
     })
   },
-  // routePlanning: function(e){
-  //   var that = this;
-  //   var index = e.currentTarget.dataset.index;
-  //   wx.navigateTo({
-  //     url: '../route/route?place=' + JSON.stringify(that.data.history[index])
-  //   })
-  // },
-  clearHistory: function(e){
+  // 清空搜索框
+  clearInput: function () {
     var that = this;
     that.setData({
-      history: []
+      input_value: '',
+      sugData: []
     })
   }
 })
