@@ -1,11 +1,17 @@
 <!--index.wxml-->
 <view class="container">
-    <map class="map" id="map" longitude="{{map.longitude}}" latitude="{{map.latitude}}" scale="{{map.scale}}" show-location="true" markers="{{map.markers}}" bindmarkertap="makertap"  controls="{{controls}}"> 
-    </map>
-  
-  <cover-view class="control control-search" bindtap="openSearch">
-    搜索地点<cover-image src="/images/search.png"></cover-image>
-  </cover-view>
-  <cover-image class="control control-target" bindtap="moveToLocation"  src="/images/target.png"></cover-image>
-  <cover-image class="control control-route" bindtap="openRoute" src="/images/routes.png"></cover-image>
+  <map class="map" id="map" longitude="{{longitude2 ? longitude2 : longitude}}" latitude="{{latitude2 ? latitude2 : latitude}}" scale="{{scale}}" show-location="true" markers="{{markers}}" bindmarkertap="makertap"  controls="{{controls}}">
+    <cover-view class="control control-search" bindtap="openSearch">
+      搜地点，搜附近<cover-image src="/images/search.png"></cover-image>
+    </cover-view>
+    <cover-image class="control control-target" bindtap="moveToLocation"  src="/images/target.png"></cover-image>
+    <!-- <cover-image class="control control-route" bindtap="openRoute" src="/images/routes.png"></cover-image> -->
+  </map>
+  <view class="footer" wx:if="{{positionData != ''}}">
+    <view class="footer-position">
+      <view class="position-title">{{positionData.title}}</view>
+      <view class="position-address">{{positionData.address}}</view>
+    </view>
+    <image class="footer-route" bindtap="openRoute" src="/images/routes.png"></image>
+  </view>
 </view>

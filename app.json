@@ -2,47 +2,12 @@
   "pages": [
     "pages/index/index",
     "pages/search/search",
-    "pages/logs/logs",
-    "pages/place/place",
-    "pages/route/route",
-    "pages/site/site"
+    "pages/route/route"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "私人定制",
-    "navigationBarTextStyle": "#fff"
-  },
-  "tabBar": {
-    "backgroundColor": "#fafafa",
-    "borderStyle": "#515151",
-    "selectedColor": "#0061b0",
-    "color": "#515151",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "images/position.png",
-        "selectedIconPath": "images/position_fill.png",
-        "text": "定位"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "images/run.png",
-        "selectedIconPath": "images/run_fill.png",
-        "text": "跑步"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "images/compass.png",
-        "selectedIconPath": "images/compass_fill.png",
-        "text": "罗盘"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "images/weather.png",
-        "selectedIconPath": "images/weather_fill.png",
-        "text": "天气"
-      }
-    ]
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "定制地图",
+    "navigationBarTextStyle": "black"
   }
 }

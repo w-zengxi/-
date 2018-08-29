@@ -16,13 +16,13 @@
   padding: 0 20rpx;
   height: 80rpx;
 }
-.search-cancel{
+.search-nearby{
   flex-grow: 0;
   padding: 0 20rpx;
   color: #3877ff;
 }
 
-.search-nearby{
+.nearby-list{
   display: flex;
   justify-content: space-around;
   margin: 20rpx;
@@ -40,10 +40,7 @@
   overflow: hidden;
   display: -webkit-flex;
 }
-/* .sug-box{
-  margin: 0 0 0 80rpx;
-  border-bottom:1px solid #ccc;
-} */
+
 .route-btn{
   display: -webkit-flex;
   flex-direction: column;

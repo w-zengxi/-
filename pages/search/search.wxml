@@ -3,16 +3,8 @@
   <view class="header">
     <view class="search-box">
       <input focus="true" type="text" value="{{input_value}}" bindinput="bindKeyInput" placeholder="请输入关键字" class="search-input"/>
-      <image src="/images/clean.png" style="width:72rpx;height:72rpx;" bindtap="clearInput"></image>
-      <view class="search-cancel">取消</view>
-    </view>
-    <view class="search-nearby">
-      <view>美食</view>
-      <view>酒店</view>
-      <view>景点</view>
-      <view>超市</view>
-      <view>银行</view>
-      <view>更多</view>
+      <image src="/images/clean.png" wx:if="{{input_value != ''}}" style="width:72rpx;height:72rpx;" bindtap="clearInput"></image>
+      <view class="search-nearby" bindtap="searchPoi">搜附近</view>
     </view>
   </view>
   <view class="suggest" wx:if="{{sugData.length != 0}}"> 
@@ -26,5 +18,5 @@
       </view>
     </view>
   </view>
-  <component-history history="{{history}}" bind:clearHistory="clearHistory" wx:else></component-history>
+  <component-history history="{{history}}" latitude="{{latitude}}" longitude="{{longitude}}" bind:clearHistory="clearHistory" wx:else></component-history>
 </view>

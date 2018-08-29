@@ -1,18 +1,5 @@
 <!--pages/route.wxml-->
 <view class="container">
-   <view class="flex route-box">
-    <view class="route-input">
-      <view class="flex input origin-input" bindtap="openSite">
-        <image class="icon" src="/images/origin.png"></image>
-        <text>我的位置</text>
-      </view>
-      <view class="flex input destination-input" bindtap="openSite">
-        <image class="icon" src="/images/destination.png"></image>
-        <text>目的地</text>
-      </view>
-    </view>
-    <view class="swap-btn">搜索</view>
-  </view> 
   <view class="flex travel-mode">
     <view class="travel-item" bindtap="selectStrategy" data-strategy="0">
       <image wx:if="{{travel == 0}}" src="/images/car_fill.png"></image>
@@ -32,19 +19,17 @@
     </view>
   </view>
 
-  <map id="map" class="map" latitude="{{map.latitude}}" longitude="{{map.longitude}}" markers="{{map.markers}}" polyline="{{map.polyline}}" scale="14" show-location="true">
-    <cover-view class="map-control">
-      <cover-image bindtap="moveToLocation" class="control-target" src="/images/target.png"></cover-image>
-    </cover-view>
+  <map id="map" class="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" polyline="{{polyline}}" show-location="true" >
+    <cover-image class="control control-target" bindtap="moveToLocation"  src="/images/target.png"></cover-image>
   </map>
 
   <view class="paths">
     <view class="path-info">
       <view>
-        {{place.title}}
+        {{title}}
         <text class="distance font12">{{distance}}</text>
       </view>
-      <view class="font12">{{place.address}}</view>
+      <view class="font12">{{address}}</view>
     </view>
     <image bindtap="mapNavigation" class="path-nav" src="/images/nav.png" ></image>
   </view>

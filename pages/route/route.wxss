@@ -3,73 +3,53 @@
   flex-grow: 1;
   width: 100%;
 }
-.flex{
-  display: -webkit-flex;
+.header{
+  display: flex;
+  align-items: center;
 }
-.route-box{
-  padding: 0 40rpx;
-  background: #3278b5;
-  font-size: 32rpx;
-  color: #fff;
-}
-.route-input{
+.choose-spot{
   flex-grow: 1;
+  color: #555;
+  font-size: 32rpx;
+}
+.choose-spot image{
+  margin: 16rpx 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.origin, .destination{
+  margin: 20rpx 40rpx;
+  border-radius: 10rpx;
+  background: #eee;
+  height: 72rpx;
+  line-height: 72rpx;
 }
 .input{
   align-items: center;
   padding: 20rpx 0;
 }
-.input input{
-  width: 100%;
-  line-height: 72rpx;
-}
-.origin-input{
+.travel-mode{
+  display: flex;
+  justify-content: space-around;
   border-bottom: 1px solid #ccc;
 }
-.input image{
-  width: 40rpx;
-  height: 40rpx;
-  margin-right: 20rpx;
+.travel-item{
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
 }
-.route-search{
-  align-self: center;
-  margin-left: 40rpx;
-}
-.swap-btn{
-  align-self: center;
-  margin-left: 40rpx;
-  width: 64rpx;
+.travel-item image{
+  width: 54rpx;
   height: 54rpx;
 }
 
-.travel-mode{
-  background: #fff;
-  border-bottom: 1px solid #ccc;
-  font-size: 28rpx;
+.control{
+  position: fixed;
 }
-.travel-item{
-  flex-grow: 1;
-  width: 25%;
-  padding: 20rpx 0;
-  text-align: center;
-}
-.travel-item image{
-  width: 44rpx;
-  height: 44rpx;
-}
-
-.map-control{
-  position: absolute;
-  right: 0;bottom: 0;
-  margin: 40rpx;
-}
-.map-control .control-target{
-  width: 72rpx;
-  height: 72rpx;
-  padding: 16rpx;
-  box-sizing: border-box;
-  border-radius: 50%;
-  background: #fff;
+.control-target{
+  right: 20rpx;
+  bottom: 600rpx;
+  width: 92rpx;
+  height: 92rpx;
 }
 
 .paths{

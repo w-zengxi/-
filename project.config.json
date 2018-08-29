@@ -12,6 +12,11 @@
 	"appid": "wx0b70df5ec47aec51",
 	"projectname": "wx",
 	"isGameTourist": false,
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
 	"condition": {
 		"search": {
 			"current": -1,
