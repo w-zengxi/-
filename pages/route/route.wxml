@@ -5,10 +5,10 @@
       <image wx:if="{{travel == 0}}" src="/images/car_fill.png"></image>
       <image wx:else src="/images/car.png"></image>
     </view>
-    <view class="travel-item" bindtap="selectStrategy" data-strategy="1">
+    <!-- <view class="travel-item" bindtap="selectStrategy" data-strategy="1">
       <image wx:if="{{travel == 1}}" src="/images/bus_fill.png"></image>
       <image wx:else src="/images/bus.png"></image>
-    </view>
+    </view> -->
     <view class="travel-item" bindtap="selectStrategy" data-strategy="2">
       <image wx:if="{{travel == 2}}" src="/images/ride_fill.png"></image>
       <image wx:else src="/images/ride.png"></image>
@@ -31,6 +31,6 @@
       </view>
       <view class="font12">{{address}}</view>
     </view>
-    <image bindtap="mapNavigation" class="path-nav" src="/images/nav.png" ></image>
+    <!-- <image bindtap="mapNavigation" class="path-nav" src="/images/nav.png" ></image> -->
   </view>
 </view>

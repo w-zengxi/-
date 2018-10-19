@@ -1,5 +1,4 @@
 // pages/route.js
-const config = require('../../utils/config.js')
 Page({
 //页面的初始数据
   data: {
@@ -128,7 +127,7 @@ Page({
     }) 
     let { latitude, longitude, latitude2, longitude2} = that.data;
     wx.request({
-      url: `https://apis.map.qq.com/ws/direction/v1/driving/?from=${latitude},${longitude}&to=${latitude2},${longitude2}&output=json&callback=cb&key=${config.qqKey}`,
+      url: `https://apis.map.qq.com/ws/direction/v1/driving/?from=${latitude},${longitude}&to=${latitude2},${longitude2}&output=json&callback=cb&key=A7LBZ-VSBKO-L7KWS-SNPXQ-WQPKT-ZRFA4`,
       success: function (res) {
         console.log(res)
         let coors = res.data.result.routes[0].polyline
@@ -182,7 +181,7 @@ Page({
     }) 
     let { latitude, longitude, latitude2, longitude2} = that.data;
     wx.request({
-      url: `https://apis.map.qq.com/ws/direction/v1/transit/?from=${latitude},${longitude}&to=${latitude2},${longitude2}&output=json&callback=cb&key=${config.qqKey}`,
+      url: `https://apis.map.qq.com/ws/direction/v1/transit/?from=${latitude},${longitude}&to=${latitude2},${longitude2}&output=json&callback=cb&key=A7LBZ-VSBKO-L7KWS-SNPXQ-WQPKT-ZRFA4`,
       success: function (res) {
         console.log(res.data.result)
         // let coors = res.data.result.routes[0].steps.polyline
@@ -218,7 +217,7 @@ Page({
     }) 
     let { latitude, longitude, latitude2, longitude2} = that.data;
     wx.request({
-      url: `https://apis.map.qq.com/ws/direction/v1/bicycling/?from=${latitude},${longitude}&to=${latitude2},${longitude2}&output=json&callback=cb&key=${config.qqKey}`,
+      url: `https://apis.map.qq.com/ws/direction/v1/bicycling/?from=${latitude},${longitude}&to=${latitude2},${longitude2}&output=json&callback=cb&key=A7LBZ-VSBKO-L7KWS-SNPXQ-WQPKT-ZRFA4`,
       success: function (res) {
         console.log(res)
         // let coors = res.data.result.routes[0].polyline
@@ -255,7 +254,7 @@ Page({
     }) 
     let { latitude, longitude, latitude2, longitude2} = that.data;
     wx.request({
-      url: `https://apis.map.qq.com/ws/direction/v1/walking/?from=${latitude},${longitude}&to=${latitude2},${longitude2}&output=json&callback=cb&key=${config.qqKey}`,
+      url: `https://apis.map.qq.com/ws/direction/v1/walking/?from=${latitude},${longitude}&to=${latitude2},${longitude2}&output=json&callback=cb&key=A7LBZ-VSBKO-L7KWS-SNPXQ-WQPKT-ZRFA4`,
       success: function (res) {
         let coors = res.data.result.routes[0].polyline
         for (let i = 2; i < coors.length; i++) {

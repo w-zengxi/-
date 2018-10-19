@@ -120,7 +120,7 @@ Page({
     })
     that.recordHistory(index)
     let url = `/pages/index/index`
-    wx.switchTab({ url })
+    wx.navigateBack(-1)
   },
   // 记录历史
   recordHistory: function (index) {

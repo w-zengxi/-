@@ -1,5 +1,5 @@
 const qqmap = require('../lib/qqmap-wx-jssdk.min.js');
-const key = '**';
+const key = 'A7LBZ-VSBKO-L7KWS-SNPXQ-WQPKT-ZRFA4';
 const qqMap = new qqmap({ key})
 
 class Qmap {
